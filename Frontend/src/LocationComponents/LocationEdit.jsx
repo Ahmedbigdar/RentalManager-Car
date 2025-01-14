@@ -26,7 +26,7 @@ const LocationEdit = () => {
 
   useEffect(()=>{
   const getVoiture = async ()=>{
-    const Voiture = await axios.get("http://localhost:3000/Voiture")
+    const Voiture = await axios.get("https://rental-manager-car.vercel.app/Voiture")
     setVoitures(Voiture.data)
   };
   getVoiture()
@@ -40,7 +40,7 @@ const LocationEdit = () => {
   useEffect(() => {
     const getlocation = async () => {
       try {
-        const location = await axios.get(`http://localhost:3000/Location/${id}`);
+        const location = await axios.get(`https://rental-manager-car.vercel.app/Location/${id}`);
         setLocation(location.data);
       } catch (error) {
         console.log(`we have an error in fetching ${error}`);
@@ -99,7 +99,7 @@ const ValidationData = () => {
         try {
           setError({});
 
-          await axios.put(`http://localhost:3000/Location/${id}`, location).then(res => toast.success("Location bien Modifier", {position:"top-center"}))
+          await axios.put(`https://rental-manager-car.vercel.app/Location/${id}`, location).then(res => toast.success("Location bien Modifier", {position:"top-center"}))
         } catch (error) {
           console.log(`error in fetching  ${error}`)
         }
