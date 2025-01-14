@@ -5,13 +5,12 @@ const Cors = require("cors")
 const connection = require("./config/connection")
 connection();
 const router = require("./routes/carsRouter")
-const Port =  "https://rental-manager-car.vercel.app/"
 app.use(Cors())
 app.use(express.json());
 app.use("/Voiture", router)
 app.use("/Location", require("./routes/LocationRouter"))
 app.use("/user" ,require('./routes/userRoutes') )
-app.listen(Port, console.log("Server's Running"));
+app.listen(3000, console.log("Server's Running"));
 
 
 
