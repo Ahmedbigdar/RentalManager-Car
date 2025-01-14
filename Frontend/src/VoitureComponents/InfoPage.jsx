@@ -19,7 +19,7 @@ const InfoPage = () => {
   
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/Voiture/${id}`)
+      .get(`https://rental-manager-car.vercel.app/Voiture/${id}`)
       .then((res) => {
         setCar(res.data);
       })
@@ -34,7 +34,7 @@ const InfoPage = () => {
 
   const handleDelete = async () => {
     await axios
-      .delete(`http://localhost:3000/Voiture/${id}`)
+      .delete(`https://rental-manager-car.vercel.app/Voiture/${id}`)
       .then((res) =>
         toast.success(res.data.message, { position: "top-center" })
       );
@@ -62,7 +62,7 @@ const CArLocations = locations.filter((location) => location.voiture && location
   useEffect(() =>{
     const fetchlocationdata = async () => {
       try {
-        const res = await axios.get('http://localhost:3000/Location')
+        const res = await axios.get('https://rental-manager-car.vercel.app/Location')
       setLocations(res.data)
       } catch (error) {
         console.log(`Error in fetching ${error}`)
