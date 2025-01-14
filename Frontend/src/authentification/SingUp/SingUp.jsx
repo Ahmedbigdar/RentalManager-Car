@@ -18,7 +18,7 @@ const handlesubmit = async(e) =>{
     e.preventDefault();
     try {
 
-        await axios.post("http://localhost:3000/user/register", {name,email,password})
+        await axios.post("https://rental-manager-car.vercel.app/user/register", {name,email,password})
         navigate("/login")
 
       } catch (error) {
