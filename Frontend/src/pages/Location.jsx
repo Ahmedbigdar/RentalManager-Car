@@ -11,7 +11,7 @@ const [locations , setLocations] = useState([])
   useEffect(() =>{
     const fetchlocationdata = async () => {
       try {
-        const res = await axios.get('http://localhost:3000/Location')
+        const res = await axios.get('https://rental-manager-car.vercel.app/Location')
       setLocations(res.data)
       } catch (error) {
         console.log(`Error in fetching ${error}`)
@@ -25,7 +25,7 @@ const [locations , setLocations] = useState([])
   const handleDelete = async (id) => {
     const Location = locations.filter((location) => location._id !== id);
     await axios
-      .delete(`http://localhost:3000/Location/${id}`, Location)
+      .delete(`https://rental-manager-car.vercel.app/Location/${id}`, Location)
       .then((res) =>
         toast.success(res.data.message, { position: "top-center" })
       );
