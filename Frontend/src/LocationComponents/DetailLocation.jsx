@@ -24,7 +24,7 @@ const DetailLocation = () => {
     const getlocation = async () => {
       try {
         const location = await axios.get(
-          `http://localhost:3000/Location/${id}`
+          `https://rental-manager-car.vercel.app/Location/${id}`
         );
         setLocation(location.data);
       } catch (error) {
@@ -37,7 +37,7 @@ const DetailLocation = () => {
   // start location
   const handleStartLocation = async (id) => {
     await axios
-      .put(`http://localhost:3000/Location/demarrer/${id}`, location)
+      .put(`https://rental-manager-car.vercel.app/Location/demarrer/${id}`, location)
       .then((res) =>
         toast.success("Lcation started", { position: "top-center" })
       );
@@ -58,7 +58,7 @@ const DetailLocation = () => {
 
   const handleDelete = async () => {
     await axios
-      .delete(`http://localhost:3000/Location/${id}`, location)
+      .delete(`https://rental-manager-car.vercel.app/Location/${id}`, location)
       .then((res) =>
         toast.success(res.data.message, { position: "top-center" })
       );
