@@ -50,7 +50,7 @@ const NouvelleVoitures = () => {
       setValidationErrors({});
 
       // Add New Car
-    await axios.post("http://localhost:3000/Voiture", Car).then(res =>  toast.success("Crated Seccessfuly", { position: "top-center" }))
+    await axios.post("https://rental-manager-car.vercel.app/Voiture", Car).then(res =>  toast.success("Crated Seccessfuly", { position: "top-center" }))
 
       setCar({
         nom: "",
