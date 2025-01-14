@@ -44,7 +44,7 @@ const EditPage = () => {
 
 
   useEffect(()=> {
-    axios.get(`http://localhost:3000/Voiture/${id}`).then((res)=>{
+    axios.get(`https://rental-manager-car.vercel.app/Voiture/${id}`).then((res)=>{
         setCar(res.data)
     }).catch((error) => console.log(error))
 }, [id])
@@ -67,7 +67,7 @@ const EditPage = () => {
       // Reset validation errors
       setValidationErrors({});
       // Edit  Car
-      await axios.put(`http://localhost:3000/Voiture/${id}`, Car).then(res => toast.success("Car Updated Seccessefully", { position: "top-center" }));
+      await axios.put(`https://rental-manager-car.vercel.app/Voiture/${id}`, Car).then(res => toast.success("Car Updated Seccessefully", { position: "top-center" }));
       setCar({
         nom: "",
         immatricule: "",
