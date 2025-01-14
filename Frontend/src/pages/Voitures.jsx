@@ -10,7 +10,7 @@ const Voitures = () => {
   useEffect(() => {
     const fetchCars = async () => {
       try {
-        const res = await axios.get("http://localhost:3000/Voiture");
+        const res = await axios.get("https://rental-manager-car.vercel.app/Voiture");
         setCars(res.data);
 
       } catch (error) {
@@ -25,7 +25,7 @@ const Voitures = () => {
   const handleDelete = async (id) => {
     const updatedCars = cars.filter((car) => car._id !== id);
     try {
-      const res = await axios.delete(`http://localhost:3000/Voiture/${id}`);
+      const res = await axios.delete(`https://rental-manager-car.vercel.app/Voiture/${id}`);
       toast.success(res.data.message, { position: "top-center" });
       setCars(updatedCars);
     } catch (error) {
